@@ -23,4 +23,8 @@ public interface PersonService {
     
     Iterable<CityPopulationDto> getCitiesPopulation();
     
+    Iterable<PersonDto> getAllChildren();
+    
+    Iterable<PersonDto> getEmployeesBySalary(Integer minSalary, Integer maxSalary);
+    
 }

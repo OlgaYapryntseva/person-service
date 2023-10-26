@@ -30,7 +30,19 @@ public class PersonController{
 	public PersonDto findPersonById(@PathVariable Integer id) {
 		return personService.findPersonById(id);
 	}
+	
+	
+	@GetMapping("/children")
+	public Iterable<PersonDto> getAllChildren() {
+		return personService.getAllChildren();
+	}
+	
+	@GetMapping("/salary/{minSalary}/{maxSalary}")
+	public Iterable<PersonDto> findEmployeesBySalary(@PathVariable Integer minSalary, @PathVariable Integer maxSalary) {
+		return personService.getEmployeesBySalary(minSalary, maxSalary);
+	}
 
+	
 	@DeleteMapping("/{id}")
 	public PersonDto removePerson(@PathVariable Integer id) {
 		return personService.removePerson(id);
